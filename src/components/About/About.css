@@ -1,0 +1,22 @@
+.about {
+    text-align: center;
+    margin: 25px;
+    color: rgb(167, 40, 40);
+}
+
+.about-body {
+    text-align: center;
+}
+
+.cuties {
+    width: 400px;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+    box-shadow: -5px -3px 5px grey;
+}
+
+.about-container {
+    margin: 80px;
+    
+}

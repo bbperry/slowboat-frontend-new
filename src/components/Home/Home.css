@@ -1,0 +1,46 @@
+
+.photo {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.back {
+  background: url(./images/watergif.gif) ;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height:400px;
+  position: sticky;
+  padding-top:115px;
+  color: white;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+ .hometitle{
+  color:rgb(167, 40, 40);
+  opacity: 90%;
+}
+
+
+.carousel {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.home-body {
+  margin: 35px;
+}
+
+.greeting {
+  text-align: center;
+  margin: 35px;
+  font-size: 4em;
+}
