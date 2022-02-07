@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+
 import './User.css';
 
 import Button from 'react-bootstrap/Button';
@@ -8,9 +10,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
-function LoginForm({handleLogin}) {
+function LoginForm({handleLogin, currentUser, setCurrentUser }) {
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate()
+
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -20,8 +27,9 @@ function LoginForm({handleLogin}) {
     setPassword(e.target.value);
   };
 
-  const handleLoginSubmit = (evt) => {
-    evt.preventDefault();
+  
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
     fetch(`http://localhost:3000/login`, {
       method: 'POST',
       headers: {
@@ -40,7 +48,10 @@ function LoginForm({handleLogin}) {
       });
     setUsername('');
     setPassword('');
+    navigate('/store')
   };
+
+
 
   return (
     <div>

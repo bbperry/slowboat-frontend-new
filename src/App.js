@@ -45,11 +45,13 @@ function App() {
   //     .then((data) => console.log(data));
   // };
 
-  console.log(currentUser);
+  console.log(currentUser); 
 
   return (
     <div>
-      <Header />
+      <Header currentUser={currentUser}
+       setCurrentUser={setCurrentUser} 
+       />
 
       <Routes>
         <Route path="/about" element={<About />} />
@@ -61,6 +63,8 @@ function App() {
           element={
             <UserForm
               handleLogin={handleLogin}
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser} 
             />
           }
         />
