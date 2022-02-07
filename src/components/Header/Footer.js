@@ -13,7 +13,7 @@ function Footer() {
             <div>
                 <img className='brand' src={brand} alt='brand image'/>
             </div>
-            <div className='tagline'>sustainable salmon, fishermen direct</div>
+            <div className='tagline'>wild, sustainable, fishermen direct</div>
             <h6 className='phone'>360.301.1393</h6> 
 
             <div className='contacts'>
