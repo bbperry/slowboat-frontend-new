@@ -9,6 +9,8 @@ import Col from "react-bootstrap/Col";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [updateCart, setUpdateCart] = useState(false);
 
 
 
@@ -19,11 +21,22 @@ function ProductList() {
       .then((data) => setProducts(data));
   }, []);
 
-
+  const addToCart = (prod) => {
+    fetch(`http://localhost:9292/products/${prod.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ ...prod, inventory: (prod.inventory -= 1) }),
+    });
+    setUpdateCart(!updateCart);
+  };
 
 
   return (
     <div>
+      <h3>5% discount for orders of 10 lbs or more and 10% discount for orders of 20 lbs or more!</h3>
       <Container>
         <Row
           xs={1}
@@ -32,7 +45,7 @@ function ProductList() {
           className="d-flex justify-content-center"
         >
       {products.map((product) => (
-      <ProductCard product={product} />
+      <ProductCard key={product.id} product={product} />
       ))}
       </Row>
       </Container>

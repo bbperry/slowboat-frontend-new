@@ -15,6 +15,7 @@ function LoginForm({handleLogin, currentUser, setCurrentUser }) {
   const [error, setError] = useState("");
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [token, setToken] = useState('')
 
   const navigate = useNavigate()
 
@@ -43,14 +44,15 @@ function LoginForm({handleLogin, currentUser, setCurrentUser }) {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        localStorage.setItem('token', data.jwt);
+        setToken(localStorage.setItem('token', data.jwt));
         handleLogin(data.currentUser);
       });
     setUsername('');
     setPassword('');
-    navigate('/store')
+    // navigate('/store')
   };
 
+console.log(password)
 
 
   return (

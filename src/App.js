@@ -8,6 +8,7 @@ import SignupForm from './components/User/SignupForm';
 import About from './components/About/About';
 import Events from './components/Events/Events';
 import Store from './components/Store/Store';
+import Stripe from './components/Store/Stripe';
 import Cart from './components/Store/Cart';
 import Footer from './components/Header/Footer';
 
@@ -46,6 +47,7 @@ function App() {
   // };
 
   console.log(currentUser); 
+  console.log(currentUser.username)
 
   return (
     <div>
@@ -58,6 +60,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/store" element={<Store />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/stripe" element={<Stripe />} />
         <Route
           path="/login"
           element={

@@ -27,7 +27,7 @@ function SignupForm({ handleLogin }) {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/signup`, {
+    fetch(`http://localhost:3000/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -46,6 +46,7 @@ function SignupForm({ handleLogin }) {
     setUsername('');
     setPassword('');
   };
+
 
   return (
     <div>
