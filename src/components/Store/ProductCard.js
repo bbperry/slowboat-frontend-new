@@ -11,8 +11,9 @@ const { id, name, desc, price, image , total_quantity } = product
 
   return (
     <div>
-      <Card style={{ width: '18rem' }} className='fish-card'>
-        <Card.Img variant="top" src={image} />
+      <div className="fish-card">
+      <Card style={{ width: '18rem' }} className='fish-card' >
+        <Card.Img variant="top" src={image} className='product-image' />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
@@ -23,6 +24,7 @@ const { id, name, desc, price, image , total_quantity } = product
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
+      </div>
     </div>
   );
 }
