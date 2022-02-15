@@ -7,31 +7,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 
-function ProductList() {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [updateCart, setUpdateCart] = useState(false);
+function ProductList( {products }) {
 
 
 
-
-  useEffect(() => {
-    fetch('http://localhost:3000/products')
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
-
-  const addToCart = (prod) => {
-    fetch(`http://localhost:9292/products/${prod.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({ ...prod, inventory: (prod.inventory -= 1) }),
-    });
-    setUpdateCart(!updateCart);
-  };
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/products')
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data));
+  // }, []);
 
 
   return (

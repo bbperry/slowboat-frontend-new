@@ -6,10 +6,9 @@ function Cart() {
 
 
   return (
-    
-    <section >
-
-    </section>
+    <div>
+      
+    </div>
   );
 }
 

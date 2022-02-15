@@ -52,6 +52,7 @@ function Header({currentUser, setCurrentUser}) {
               <LinkContainer className="nav-links" to="/cart">
                 <Nav.Link className="links">Cart</Nav.Link>
               </LinkContainer>
+              
 
               {!currentUser.username ? (
                 <LinkContainer to="/login">

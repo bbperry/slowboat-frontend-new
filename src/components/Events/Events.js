@@ -21,6 +21,7 @@ function Events() {
 
       <div>
         <h1>Pop-up Sales</h1>
+        <p>Stay tuned for upcoming dates and locations!</p>
       </div>
     </section>
   );

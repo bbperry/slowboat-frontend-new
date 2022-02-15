@@ -53,7 +53,7 @@ const images =[
     </div>
     <div className='home-body'>
         <h1 className='greeting'>A'hoy Matey</h1>
-        <p>Yaaaar, we sail the seven seas so you don't have to in search of plunder to bring straight from our deck into your dinner.</p>
+        <p>Welcome to Slow Boat Fish Co. Please visit our shop to find some of the highest quality fish products you can find in the area!</p>
     </div>
     </div>
   );

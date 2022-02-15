@@ -7,14 +7,21 @@ import UserForm from './components/User/UserForm';
 import SignupForm from './components/User/SignupForm';
 import About from './components/About/About';
 import Events from './components/Events/Events';
-import Store from './components/Store/Store';
+import ProductList from './components/Store/ProductList';
 import Stripe from './components/Store/Stripe';
 import Cart from './components/Store/Cart';
 import Footer from './components/Header/Footer';
+import { useParams } from "react-router-dom";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
+  const [deletes, setDeletes] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [updateCart, setUpdateCart] = useState(false);
+  const [products, setProducts] = useState([]);
 
+
+  // Auth
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -31,6 +38,7 @@ function App() {
     }
   }, []);
 
+
   const handleLogin = (currentUser) => {
     setCurrentUser(currentUser);
   };
@@ -46,28 +54,45 @@ function App() {
   //     .then((data) => console.log(data));
   // };
 
-  console.log(currentUser); 
-  console.log(currentUser.username)
+  console.log(currentUser);
+  console.log(currentUser.username);
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/cart_items')
+  //     .then((res) => res.json())
+  //     .then(setCart);
+  // }, [deletes, updateCart]);
+
+  
+  useEffect(() => {
+      fetch('http://localhost:3000/products')
+        .then((res) => res.json())
+        .then((data) => setProducts(data));
+    }, []);
+
 
   return (
     <div>
-      <Header currentUser={currentUser}
-       setCurrentUser={setCurrentUser} 
-       />
+      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} cart={cart} />
 
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/stripe" element={<Stripe />} />
+        <Route path="/store" element={<ProductList products={products} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart />
+          }
+        />
+        <Route path="/stripe/:id" element={<Stripe />} />
         <Route
           path="/login"
           element={
             <UserForm
               handleLogin={handleLogin}
               currentUser={currentUser}
-              setCurrentUser={setCurrentUser} 
+              setCurrentUser={setCurrentUser}
             />
           }
         />
