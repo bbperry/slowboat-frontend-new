@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import './Store.css';
 
-function ProductCard({ product }) {
+function ProductCard({ product, currentUser }) {
   const [quantity, setQuantity] = useState("");
 
   const navigate = useNavigate()
@@ -54,7 +54,7 @@ function ProductCard({ product }) {
               <Button variant="primary" type="submit" >
                 Purchase
               </Button>
-              { token ? <Link to={`/products/${id}`}>Update Price</Link> : null }
+              { currentUser.admin ? <Link to={`/products/${id}`}>Update Price</Link> : null }
             </Form>
           </Card.Body>
         </Card>

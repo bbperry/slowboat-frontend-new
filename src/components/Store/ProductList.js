@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 
-function ProductList( { products }) {
+function ProductList( { products, currentUser }) {
 
 
 
@@ -35,7 +35,7 @@ function ProductList( { products }) {
           className="d-flex justify-content-center"
         >
       {products.map((product) => (
-      <ProductCard key={product.id} product={product} />
+      <ProductCard key={product.id} product={product} currentUser={currentUser}/>
       ))}
       </Row>
       </Container>
