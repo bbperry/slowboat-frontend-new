@@ -76,8 +76,8 @@ function App() {
       <Routes>
         <Route path="/products/:id" element={<ProductDetails price={price} setPrice={setPrice} />} />
         <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/store" element={<ProductList products={products} />} />
+        <Route path="/events" element={<Events currentUser={currentUser} />} />
+        <Route path="/store" element={<ProductList products={products} currentUser={currentUser} />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/stripe/:id" element={<Stripe />} />
         <Route

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import AddEvent from './AddEvent';
 import './Events.css';
 
-function Events() {
+function Events( {currentUser} ) {
 
   const token = localStorage.getItem('token');
 
@@ -42,7 +42,7 @@ function Events() {
         ))}
       </div>
 
-      {token ? (
+      { currentUser.admin ? (
         <div className="blob">
           <AddEvent handleAddEvent={handleAddEvent}/>
         </div>
