@@ -20,7 +20,7 @@ function ProductList( {products }) {
 
   return (
     <div>
-      <h3>5% discount for orders of 10 lbs or more and 10% discount for orders of 20 lbs or more!</h3>
+      <h3 className='shop-header'>5% discount for orders of 10 lbs or more and 10% discount for orders of 20 lbs or more!</h3>
       <Container>
         <Row
           xs={1}

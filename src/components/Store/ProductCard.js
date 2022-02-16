@@ -14,6 +14,7 @@ function ProductCard({ product }) {
   
   const { id, name, desc, price, image, total_quantity } = product;
 
+  const token = localStorage.getItem('token');
 
   function purchase(e) {
     e.preventDefault(); 
@@ -48,11 +49,12 @@ function ProductCard({ product }) {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Quantity</Form.Label>
-                <Form.Control type="text" placeholder="# of lbs or units if smoked" onChange={(event) => setQuantity(event.target.value)}/>
+                <Form.Control required type="number" min="5" placeholder="# of lbs or units if smoked" onChange={(event) => setQuantity(event.target.value)}/>
               </Form.Group>
               <Button variant="primary" type="submit"  >
                 Purchase
               </Button>
+              { token ? <Link to={`/products/${id}`}>Update Price</Link> : null }
             </Form>
           </Card.Body>
         </Card>

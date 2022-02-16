@@ -16,6 +16,7 @@ function LoginForm({handleLogin, currentUser, setCurrentUser }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState('')
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate()
 
@@ -59,7 +60,6 @@ console.log(password)
     <div>
       <Container>
         <Row>&nbsp;</Row>
-
         <Row>
           <Col></Col>
           <Col className="text-center">
@@ -68,7 +68,6 @@ console.log(password)
           </Col>
           <Col></Col>
         </Row>
-
         <Row>
           <Col></Col>
           <Col xs={10}>
@@ -112,20 +111,12 @@ console.log(password)
                 <br />
                 <Container className="text-center">
                   <br />
-                  {/* {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-        {success.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))} */}
                 </Container>
               </Row>
             </Form>
           </Col>
           <Col></Col>
         </Row>
-        {/* <Row>&nbsp;</Row>
-        <Row>&nbsp;</Row> */}
       </Container>
     </div>
   );
