@@ -49,9 +49,9 @@ function Header({currentUser, setCurrentUser}) {
                 <Nav.Link className="links">Shop</Nav.Link>
               </LinkContainer>
 
-              <LinkContainer className="nav-links" to="/cart">
+              {/* <LinkContainer className="nav-links" to="/cart">
                 <Nav.Link className="links">Cart</Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
               
 
               {!currentUser.username ? (
