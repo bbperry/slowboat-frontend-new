@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Store.css';
 import { useParams } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
 // Stripe
-import { Elements } from '@stripe/react-stripe-js';
+// import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import StripeCheckout from 'react-stripe-checkout';
 
@@ -65,8 +64,7 @@ function Stripe() {
       {!loading ? (
         <>
           <p>
-            {' '}
-            Would you like to purchase {cart.quantity} lbs of{' '}
+            Would you like to purchase {cart.quantity} lbs of
             {cart.product ? <p>{cart.product.name}?</p> : null} for ${cost}
           </p>
 

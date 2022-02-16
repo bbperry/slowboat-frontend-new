@@ -78,3 +78,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006994', end
 .phone {
     margin: 25px;
 }
+
+.admin-link-container {
+    padding-bottom: 20px;
+}
+
+.admin-link {
+    color: #006994;
+    text-decoration: none;
+}

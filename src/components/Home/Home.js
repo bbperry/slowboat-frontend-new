@@ -52,7 +52,7 @@ const images =[
       </Carousel>
     </div>
     <div className='home-body'>
-        <h1 className='greeting'>A'hoy Matey</h1>
+        <h1 className='greeting'>Home</h1>
         <p>Welcome to Slow Boat Fish Co. Please visit our shop to find some of the highest quality fish products you can find in the area!</p>
     </div>
     </div>

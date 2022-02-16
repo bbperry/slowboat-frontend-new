@@ -1,3 +1,14 @@
 .events-container {
     text-align: center;
 }
+
+.eventFormContainer {
+    margin: 50px;
+    width: 50%;
+    text-align: center;
+}
+
+.blob {
+    text-align: center;
+    width:100%
+}

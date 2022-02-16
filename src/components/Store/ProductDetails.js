@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -13,10 +12,9 @@ import './Store.css';
 
 function ProductDetails({price, setPrice}) {
   const [product, setProduct] = useState([]);
-  const [image, setImage] = useState('');
-  const [name, setName] = useState('');
-  const [desc, setDesc] = useState('');
-//   const [price, setPrice] = useState('');
+  // const [image, setImage] = useState('');
+  // const [name, setName] = useState('');
+  // const [desc, setDesc] = useState('');
 
   const { id } = useParams();
 
@@ -47,7 +45,12 @@ function ProductDetails({price, setPrice}) {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`http://localhost:3000/products/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((r) => r.json())
       .then((product) => {
         setProduct(product);
@@ -90,7 +93,7 @@ function ProductDetails({price, setPrice}) {
             <Col></Col>
             <Col className="text-center">
               <Button variant="primary" type="submit">
-                Login {/*{isLoading ? "Loading..." : "Login"}*/}
+                Update Price
               </Button>
             </Col>
             <Col></Col>
