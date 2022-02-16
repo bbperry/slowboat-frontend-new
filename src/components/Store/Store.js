@@ -4,7 +4,7 @@ import './Store.css';
 
 
 function Store() {
-
+  
 
   return (
     <div>

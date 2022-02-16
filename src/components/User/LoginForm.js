@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 import './User.css';
@@ -50,10 +50,12 @@ function LoginForm({handleLogin, currentUser, setCurrentUser }) {
       });
     setUsername('');
     setPassword('');
-    // navigate('/store')
+    navigate('/store')
   };
 
 console.log(password)
+
+
 
 
   return (

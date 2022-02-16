@@ -4,10 +4,9 @@ import './Store.css';
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 
-function ProductList( {products }) {
+function ProductList( { products }) {
 
 
 
@@ -17,6 +16,13 @@ function ProductList( {products }) {
   //     .then((data) => setProducts(data));
   // }, []);
 
+  // const [loading, setLoading] = useState(true);
+  
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000);
+  // }, [currentUser]);
 
   return (
     <div>

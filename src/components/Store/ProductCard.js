@@ -42,7 +42,7 @@ function ProductCard({ product }) {
             <Card.Text>
               <p>{desc}</p>
               <p>Price: {price} per pound</p>
-              <p>Total Quantity: {total_quantity}</p>
+              {/* <p>Total Quantity: {total_quantity}</p> */}
             </Card.Text>
             {/* <Button variant="primary">Add To Cart</Button> */}
             <Form onSubmit={purchase}>
@@ -51,7 +51,7 @@ function ProductCard({ product }) {
                 <Form.Label>Quantity</Form.Label>
                 <Form.Control required type="number" min="5" placeholder="# of lbs or units if smoked" onChange={(event) => setQuantity(event.target.value)}/>
               </Form.Group>
-              <Button variant="primary" type="submit"  >
+              <Button variant="primary" type="submit" >
                 Purchase
               </Button>
               { token ? <Link to={`/products/${id}`}>Update Price</Link> : null }

@@ -3,9 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import Admin from './components/Admin/Admin';
 import UserForm from './components/User/UserForm';
-import SignupForm from './components/User/SignupForm';
 import About from './components/About/About';
 import Events from './components/Events/Events';
 import ProductList from './components/Store/ProductList';
@@ -13,7 +11,6 @@ import ProductDetails from './components/Store/ProductDetails';
 import Stripe from './components/Store/Stripe';
 import Cart from './components/Store/Cart';
 import Footer from './components/Header/Footer';
-import { useParams } from 'react-router-dom';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -83,7 +80,6 @@ function App() {
         <Route path="/store" element={<ProductList products={products} />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/stripe/:id" element={<Stripe />} />
-        <Route path="/admin" element={<Admin products={products}/>} />
         <Route
           path="/login"
           element={
