@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import AddEvent from './AddEvent';
+import EventCard from './EventCard';
 import './Events.css';
 
-function Events( {currentUser} ) {
-
+function Events({ currentUser }) {
   const token = localStorage.getItem('token');
 
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/events')
@@ -19,37 +19,35 @@ function Events( {currentUser} ) {
     setEvents([...events, newEvent]);
   }
 
- 
+
+  function handleDeleteEvent(deletedEvent) {
+    const updatedEvents = events.filter(
+      (event) => event.id !== deletedEvent.id
+    );
+    setEvents(updatedEvents);
+  }
 
   return (
     <section className="events-container">
       <div>
         <h1>Events</h1>
-        { events.map((event) => (
-        <div key={event.id}>
-        <h4>{event.title}</h4>
-        <h5>{event.time}</h5>
-        <h6>{event.months}</h6>
-        <iframe
-          src={event.map}
-          width="600"
-          height="450"
-          style={{ border: "0" }}
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
-        </div>
+        {events.map((event) => (
+          <EventCard
+            key={event.id}
+            event={event}
+            handleDeleteEvent={handleDeleteEvent}
+            currentUser={currentUser}
+          />
         ))}
       </div>
 
-      { currentUser.admin ? (
+      {currentUser.admin ? (
         <div className="blob">
-          <AddEvent handleAddEvent={handleAddEvent}/>
+          <AddEvent handleAddEvent={handleAddEvent} />
         </div>
       ) : (
         <></>
       )}
-
 
       {/* <div>
         <h1>Pop-up Sales</h1>

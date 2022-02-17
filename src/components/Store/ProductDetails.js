@@ -34,6 +34,7 @@ function ProductDetails({price, setPrice}) {
       .then((price) => {
         setPrice(price);
         console.log(price)
+        e.target.reset()
     });
 }
 

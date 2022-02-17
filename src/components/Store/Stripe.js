@@ -40,6 +40,7 @@ function Stripe() {
     cost = cart.price * cart.quantity;
   }
 
+  
   function handleToken(token) {
     const charge = {
       token: token.id,

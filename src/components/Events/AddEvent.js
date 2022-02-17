@@ -34,6 +34,7 @@ function AddEvent({handleAddEvent}) {
     })
       .then((r) => r.json())
       .then((newEvent) => handleAddEvent(newEvent));
+      e.target.reset()
   }
 
 
@@ -47,6 +48,7 @@ function AddEvent({handleAddEvent}) {
               <Form.Control
                 type="text"
                 placeholder="Event title..."
+                required
                 onChange={(event) => setTitle(event.target.value)}
               />
           </Form.Group>
@@ -54,6 +56,7 @@ function AddEvent({handleAddEvent}) {
               <Form.Control
                 type="text"
                 placeholder="Event days and time..."
+                required
                 onChange={(event) => setTime(event.target.value)}
               />
           </Form.Group>
@@ -61,6 +64,7 @@ function AddEvent({handleAddEvent}) {
               <Form.Control
                 type="text"
                 placeholder="Months you will be there..."
+                required
                 onChange={(event) => setMonths(event.target.value)}
               />
           </Form.Group>
@@ -68,6 +72,7 @@ function AddEvent({handleAddEvent}) {
               <Form.Control
                 type="text"
                 placeholder="Google Map embed link..."
+                required
                 onChange={(event) => setMap(event.target.value)}
               />
           </Form.Group>

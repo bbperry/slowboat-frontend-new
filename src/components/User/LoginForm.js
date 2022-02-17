@@ -50,7 +50,7 @@ function LoginForm({handleLogin, currentUser, setCurrentUser }) {
       });
     setUsername('');
     setPassword('');
-    navigate('/store')
+    navigate('/#review')
   };
 
 console.log(password)

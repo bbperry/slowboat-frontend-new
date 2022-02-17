@@ -91,7 +91,7 @@ function App() {
           }
         />
         {/* <Route path="/signup" element={<SignupForm />}/> */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home currentUser={currentUser} />} />
       </Routes>
       <Footer />
     </div>
