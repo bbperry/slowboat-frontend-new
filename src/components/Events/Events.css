@@ -3,12 +3,8 @@
 }
 
 .eventFormContainer {
-    margin: 50px;
+    margin:25px auto;
     width: 50%;
     text-align: center;
 }
 
-.blob {
-    text-align: center;
-    width:100%
-}

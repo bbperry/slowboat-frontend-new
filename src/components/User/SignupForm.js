@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './User.css';
+import { useNavigate } from 'react-router-dom'
+
 
 
 import Button from 'react-bootstrap/Button';
@@ -13,6 +15,7 @@ function SignupForm({ handleLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   
+  const navigate = useNavigate()
 
   // Add ErrorHandling
   // const [error, setError] = useState("");
@@ -45,6 +48,7 @@ function SignupForm({ handleLogin }) {
       });
     setUsername('');
     setPassword('');
+    navigate('/#review')
   };
 
 
