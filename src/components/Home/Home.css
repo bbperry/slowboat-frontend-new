@@ -50,9 +50,10 @@
 .outer-container {
   border-radius: 10px;
   background-color: #006994;
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
   text-align: center;
+  box-shadow: -3px -3px 3px grey;
 }
 
 .review-header {
@@ -67,6 +68,7 @@
   margin: 20px auto;
   padding-bottom: 40px;
   background-color: white;
+  box-shadow: -3px -3px 3px  darkgrey;
 }
 
 .reviews-container {

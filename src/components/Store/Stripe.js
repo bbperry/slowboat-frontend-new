@@ -83,7 +83,7 @@ function Stripe() {
               />
               {success ? (
                 <>
-                  <h1 className="rotate-center">Thank you for your purchase!</h1>
+                  <h1 className="rotate-center">Thank you for supporting us!</h1>
                   <LinkContainer to="/store"><Button className="success-button" variant="primary" type="submit">
                   Back to Store
                 </Button></LinkContainer>
