@@ -27,6 +27,14 @@ function Events({ currentUser }) {
     setEvents(updatedEvents);
   }
 
+  function handleDeleteClick() {
+    fetch(`http://localhost:3000/events/${events.id}`, {
+      method: 'DELETE',
+    })
+      .then((r) => r.json())
+      .then(() => handleDeleteEvent(events));
+  }
+
   return (
     <section className="events-container">
       <div>
@@ -37,6 +45,7 @@ function Events({ currentUser }) {
             event={event}
             handleDeleteEvent={handleDeleteEvent}
             currentUser={currentUser}
+            handleDeleteClick={handleDeleteClick}
           />
         ))}
       </div>
