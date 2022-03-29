@@ -2,15 +2,15 @@ import React from 'react';
 import './Events.css';
 
 
-function EventCard({event, handleDeleteEvent, currentUser}) {
+function EventCard({event, handleDeleteEvent, handleDeleteClick, currentUser}) {
 
-    function handleDeleteClick() {
-        fetch(`http://localhost:3000/events/${event.id}`, {
-          method: 'DELETE',
-        })
-          .then((r) => r.json())
-          .then(() => handleDeleteEvent(event));
-      }
+    // function handleDeleteClick() {
+    //     fetch(`http://localhost:3000/events/${event.id}`, {
+    //       method: 'DELETE',
+    //     })
+    //       .then((r) => r.json())
+    //       .then(() => handleDeleteEvent(event));
+    //   }
 
   return (
     <div>

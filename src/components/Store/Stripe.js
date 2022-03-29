@@ -23,7 +23,6 @@ function Stripe() {
       .then((r) => r.json())
       .then((cart) => {
         setCart(cart);
-        // setRender(!render)
       });
   }, [loading]);
 

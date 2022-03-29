@@ -102,7 +102,7 @@ function Home({ currentUser }) {
           </div>
           <div className="inner-container">
             <div className="reviews-container">
-              {reviews.map((review) => (
+              { reviews ? reviews.map((review) => (
                 <Reviews
                   key={review.id}
                   review={review}
@@ -111,7 +111,7 @@ function Home({ currentUser }) {
                   update={update}
                   setUpdate={setUpdate}
                 />
-              ))}
+              )) : null }
             </div>
           </div>
           <p className="love">we would love to hear from you</p>
