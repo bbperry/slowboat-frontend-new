@@ -21,6 +21,8 @@ function Cart() {
       {items.map((item) => (
       <CartCard key={item.id} item={item} />
       ))}
+
+      <button>Checkout</button>
     </div>
   );
 }
