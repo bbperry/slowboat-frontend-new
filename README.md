@@ -16,8 +16,3 @@ As a seller I can,
 * add and remove events I will be attending on a calendar.
 * update product stock as needed.
 * add and remove pickup locations
-
-![ERD](public/slowboat-erd.png)
-
-
-![Mockup](public/SlowBoat.png)
