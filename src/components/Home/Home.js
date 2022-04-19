@@ -11,14 +11,12 @@ import boat5 from './images/boat5.jpg';
 import boat6 from './images/boat6.jpg';
 import boat7 from './images/boat7.jpg';
 import boat8 from './images/boat8.jpg';
-import watergif from './images/watergif.gif';
 import { LinkContainer } from 'react-router-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 function Home({ currentUser }) {
   const images = [boat, boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8];
@@ -95,9 +93,7 @@ function Home({ currentUser }) {
       <div className="home-body">
         <div className="outer-container">
           <div className="review-header">
-            <h1>
-              <a name="review">Customer Feedback</a>
-            </h1>
+            <h1>Customer Feedback</h1>
             <h3>share your review</h3>
           </div>
           <div className="inner-container">
@@ -114,7 +110,7 @@ function Home({ currentUser }) {
               )) : null }
             </div>
           </div>
-          <p className="love">we would love to hear from you</p>
+          <p className="love">we would love to hear from you!</p>
           {!currentUser.username ? (
             <>
               <LinkContainer to="/login">
